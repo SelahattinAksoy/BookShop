@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>sELOJAN</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!--Transection and adres bilgileri etc-->
+
+    <div id="transaction" class="transaction">
+        <span class="popup_close" onclick="sepet_popup_close('transaction')"> X </span>
+        <div>
+            <form action="">
+                <br> <span style="margin-right: 100px;"> Alıcı Adı-Soyad :</span><input id="alıcı_name" type="text"><br>
+                <hr><span style="margin-right: 100px;"> Adres :</span><input id="alıcı_adres" type="text"><br>
+                <hr> <span style="margin-right: 100px;"> Tel :</span><input id="alıcı_tel" type="text"><br>
+                <hr><span style="margin-right: 100px;"> Mail :</span>
+                <input id="alıcı_mail" type="text"><br>
+                <hr>
+            </form>
+
+            <button onclick="Satın_Alındı_popup('transaction')" class="popup_satınal_btn">Satın Al</button>
+        </div>
+        <!--------------------------------------->
+    </div>
+    <!-- Sepet popup look books in sepet -->
+    <div id="sepet_popup" class="sepet_popup">
+        <span class="popup_close" onclick="sepet_popup_close('sepet_popup')"> X </span>
+        <div>
+
+            <h3>Sepetteki Kitaplar</h>
+                <hr>
+                <div id="kitap_list">
+
+                </div>
+                <hr>
+                <span>Toplam </span>
+                <div style="border: 3px solid black;">
+                    <p id="toplam_fiyat">0</p> <span>TL</span>
+                    <hr>
+                </div>
+                <button onclick="buy()" class="popup_satınal_btn">Satın Al</button>
+        </div>
+
+    </div>
+    <!-------------------------------------->
+
+
+    <div id="Satın_Alındı_popup" class="sepet_popup">
+        <span class="popup_close" onclick="sepet_popup_close('Satın_Alındı_popup')"> X </span>
+        <div>
+
+            <h3>Bilgi Fişi</h>
+                <hr>
+                <div style="border: 3px dashed black;" id="Satın_Alındı_list">
+
+                </div>
+                <hr>
+
+
+                <button onclick="sepet_popup_close('Satın_Alındı_popup')" class="popup_satınal_btn">Tamam</button>
+        </div>
+
+    </div>
+    <!-------------------------------------->
+
+
+    <!--Kitap ekle kısmı-->
+
+    <div id="add_book" class="transaction">
+        <span class="popup_close" onclick="sepet_popup_close('add_book')"> X </span>
+        <div>
+            <form action="">
+                <br> <span style="margin-right: 100px;"> Kitap Adı :</span><input type="text"><br>
+                <hr><span style="margin-right: 100px;"> Konusu :</span><input type="text"><br>
+                <hr> <span style="margin-right: 100px;"> Fiyat :</span><input type="number"><br>
+                <hr><span style="margin-right: 100px;"> Mail :</span>
+                <input type="text"><br>
+                <input type="file" name="picField" id="picField" size="24" alt="" />
+
+                <hr>
+            </form>
+            <img width="100px" height="100px" src="" id="outImage">
+            <button class="popup_satınal_btn">Kitabı Ekle</button>
+        </div>
+    </div>
+    <!--------------------------------------->
+
+
+
+    <header class="header">
+
+        <button onclick="add_book()" class="btn">Kitap Ekle</button>
+        <button class="btn" onclick="sepet_popup()">Sepet</button>
+        <div class="drop">
+            <button>Kategori</button>
+            <br><br>
+            <div class="drop_down ">
+                <a onclick="readTextFile('./img/books/Dini/Dini.txt',myFunction)">Korku</a>
+                <a onclick="readTextFile('./img/books/Drama/Drama.txt',myFunction)">Drama</a>
+                <a onclick="readTextFile('./img/books/Fantezi/Fantezi.txt',myFunction)">Fantezi</a>
+                <a onclick="readTextFile('./img/books/Komedi/Komedi.txt',myFunction)">Komedi</a>
+                <a onclick="readTextFile('./img/books/Dini/Dini.txt',myFunction)">Dini</a>
+            </div>
+        </div>
+
+
+        <h1>Book SHOP</h1>
+        </div>
+
+    </header>
+
+
+    <section id="section" class="section ">
+
+        <div id="most_satanlar" class="most_satanlar " style="margin-left: 28%;margin-top:6%;">
+
+            <div class="slayt">
+                <img height="500px " width="500px " src="img\books\Fantezi\mert.jpg ">
+            </div>
+            <div class="slayt">
+                <img height="500px " width="500px " src="img\books\Fantezi\logo.jpg ">
+            </div>
+            <div class="slayt">
+                <img height="500px " width="500px " src="img\books\Fantezi\nuri.jpg ">
+            </div>
+            <div class="slayt">
+                <img height="500px " width="500px " src="img\books\Fantezi\madona.jpg ">
+            </div>
+
+        </div>
+        <div>
+            <h1 id="book_head" style=" text-align: center; border: 2px solid black; width: 95%;">Books </h1>
+
+        </div>
+
+        <div class="toplam" id="top">
+
+        </div>
+
+    </section>
+    <div>
+        <h1 id="book_head" onclick="myFunction()" style=" text-align: center; border: 2px solid black; width: 95%;">~~ </h1><br>
+
+    </div>
+    <footer class="footer ">
+        <p>Made by Selahattin Aksoy</p>
+    </footer>
+</body>
+<script src="index.js">
+</script>
+
+</html>
